@@ -84,7 +84,7 @@ public class Ch4Activity1 extends AppCompatActivity implements View.OnFocusChang
     }
 
     //2 实现事件监听类，该监听类是一个特殊的java类，必须实现一个xxxListener接口
-    class MyClickListener implements View.OnClickListener{
+    static class MyClickListener implements View.OnClickListener{
         public void onClick(View view){
             Log.i(Ch4Activity1.class.toString(),"button click");
         }
