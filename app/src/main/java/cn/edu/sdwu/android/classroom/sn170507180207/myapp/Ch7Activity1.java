@@ -46,32 +46,32 @@ public class Ch7Activity1 extends AppCompatActivity {
             }
         });
 
-        spinner=(Spinner)findViewById(R.id.ch7_1_spinner2);
-        //准备数据
-        list=new ArrayList();
-        list.add("spinnerItem1");
-        list.add("spinnerItem2");
-        list.add("spinnerItem3");
-        //实例化数组适配器
-        //引用系统的layout
-        //ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
-        //自己创建的layout
-        ArrayAdapter arrayAdapter=new ArrayAdapter(this,R.layout.layout_spinner_item,list);
-        //设置到spinner中
-        spinner.setAdapter(arrayAdapter);
-        //处理事件响应
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //参数i 代表当前选中的索引(0开始计数)
-                String content = list.get(i).toString();
-                Toast.makeText(Ch7Activity1.this, content, Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+//        spinner=(Spinner)findViewById(R.id.ch7_1_spinner2);
+//        //准备数据
+//        list=new ArrayList();
+//        list.add("spinnerItem1");
+//        list.add("spinnerItem2");
+//        list.add("spinnerItem3");
+//        //实例化数组适配器
+//        //引用系统的layout
+//        //ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,list);
+//        //自己创建的layout
+//        ArrayAdapter arrayAdapter=new ArrayAdapter(this,R.layout.layout_spinner_item,list);
+//        //设置到spinner中
+//        spinner.setAdapter(arrayAdapter);
+//        //处理事件响应
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                //参数i 代表当前选中的索引(0开始计数)
+//                String content = list.get(i).toString();
+//                Toast.makeText(Ch7Activity1.this, content, Toast.LENGTH_SHORT).show();
+//            }
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
     }
 
 }
