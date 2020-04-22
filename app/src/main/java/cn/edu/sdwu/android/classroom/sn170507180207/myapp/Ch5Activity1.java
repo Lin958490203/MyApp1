@@ -2,7 +2,11 @@ package cn.edu.sdwu.android.classroom.sn170507180207.myapp;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,6 +48,7 @@ public class Ch5Activity1 extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
     }
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void notification(View view){
         Notification.Builder builder=new Notification.Builder(this);
         //在构造器中，完成通知各种属性的设置
@@ -51,6 +56,10 @@ public class Ch5Activity1 extends AppCompatActivity {
         builder.setContentTitle("message");
         builder.setWhen(System.currentTimeMillis());
         builder.setSmallIcon(android.R.drawable.ic_input_delete);//引用系统资源
+
+        Intent intent=new Intent(this,Ch6Activity1.class);//点击通知之后，跳转的界面
+        PendingIntent pendingIntent=PendingIntent.getActivity(this,101,intent,PendingIntent.FLAG_CANCEL_CURRENT);//这个类代表待办通知
+        builder.setContentIntent(pendingIntent);
         //调用build方法 完成构造
         Notification notification=builder.build();
         //使用NotificationManager,发送通知
